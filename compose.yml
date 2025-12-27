@@ -2,17 +2,17 @@
 version: "3"
 services:
  devopsdb:
-   image: abbasshaik739/myreposit:dbimage
+   image: abbasshaik739/repo:dbimage
    ports:
      - "3306:3306"
    deploy:
-     replicas: 3
+     replicas: 2
 
  application:
-   image: abbasshaik739/myreposit:appimage
+   image: abbasshaik739/repo:appimage
    ports:
      - "1111:8080"
    deploy:
-     replicas: 3
+     replicas: 2
    depends_on:
      - "devopsdb"
